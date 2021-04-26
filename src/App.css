@@ -1,15 +1,18 @@
 .App {
   text-align: center;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+  align-content: center;
   background-color: #1c1f2f;
 }
 
 .inputRow {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .inputCol {
