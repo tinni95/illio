@@ -63,7 +63,7 @@ function App() {
           placeholderText="yyyy-mm-dd"
           selected={startDate}
           maxDate={endDate}
-          onChange={(date) => setStartDate(date)}
+          onSelect={(date) => setStartDate(date)}
           dateFormat="yyyy-MM-dd"
         />
 
@@ -73,7 +73,7 @@ function App() {
           className={"input"}
           placeholderText="yyyy-mm-dd"
           selected={endDate}
-          onChange={(date) => setEndDate(date)}
+          onSelect={(date) => setEndDate(date)}
           dateFormat="yyyy-MM-dd"
         />
       </div>
