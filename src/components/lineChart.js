@@ -12,6 +12,12 @@ export default function LineChart({ data = MOCKED_API }) {
       textStyle: { color: "#FFF" },
       format: "yy-M-d",
     },
+    explorer: {
+      actions: ["dragToZoom", "rightClickToReset"],
+      axis: "horizontal",
+      keepInBounds: true,
+      maxZoomIn: 10.0,
+    },
     vAxis: {
       textStyle: { color: "#FFF" },
     },
