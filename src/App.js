@@ -14,23 +14,15 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(
-      moment(startDate).format("YYYY-MM-DD"),
-      moment(endDate).format("yyyy-mm-dd")
-    );
-  }, [endDate, startDate]);
-
-  useEffect(() => {
     const fetchData = async () => {
       var config = {
         method: "get",
-        url:
-          "https://eodhistoricaldata.com/api/eod/MCD.US?api_token=OeAFFmMliFG5orCUuwAKQ8l4WWFQ67YX&period=d&from=2020-01-1&to=2021-01-01&fmt=json",
+        url: GET_STOCK(
+          moment(startDate).format("YYYY-MM-DD"),
+          moment(endDate).format("YYYY-MM-DD")
+        ),
         headers: {
-          host: "eodhistoricaldata.com",
-          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
-          "Postman-Token": "42e6c291-9a09-c29f-f28f-11872e2490a5",
         },
       };
 
@@ -40,7 +32,7 @@ function App() {
     };
 
     fetchData();
-  }, []);
+  }, [endDate, startDate]);
 
   return (
     <div className="App">
@@ -74,7 +66,7 @@ function App() {
           dateFormat="yyyy-MM-dd"
         />
       </div>
-      <LineChart />
+      <LineChart data={data} />
     </div>
   );
 }
